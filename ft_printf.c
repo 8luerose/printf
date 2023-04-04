@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:17:29 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/03 22:12:59 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:32:37 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,17 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		bytes;
+	//int		past_bytes;
 	char	c;
 
 	va_start(ap, format);
 	while (*format)
 	{
+		//past_bytes = bytes;
 		if (*format == '%')
 		{
 			c = *(format + 1);
-			ft_check_argv(c, ap, &bytes);
+			ft_check_argv(c, &ap, &bytes);
 			if (bytes == -1)
 				return (-1);
 		}
