@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:58:17 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/07 22:42:13 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:48:04 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,35 +70,12 @@ void	ft_putnbr_unsigned(unsigned int n, int *bytes)
 	ft_putchar(c, bytes);
 }
 
-
 void	ft_convert_base(unsigned int num, char *hex, int *bytes)
 {
 	char	c;
-	// if (num == 0)
-	// 	ft_putstr("0x", bytes);
-	// 	//*bytes += write(1, "0x", 2);
+
 	if (num >= 16)
 		ft_convert_base(num / 16, hex, bytes);
 	c = hex[ptr % 16] + '0';
 	ft_putchar(c, bytes);
-	//ft_putchar(hex[ptr % 16], bytes);
 }
-
-// void	ft_convert_base(unsigned int n, char *base, int *bytes)
-// {
-// 	int				i;
-// 	int				len;
-// 	unsigned int	tmp;
-
-// 	len = 0;
-// 	while (base[len])
-// 		len++;
-// 	i = 0;
-// 	/*
-// 	while (n[i] & (n[i] >= '0' && n[i] <= '9'))
-// 	{
-// 		tmp = n[i];
-// 		ft_putchar((base[tmp] - '0'), bytes);
-// 		i++;
-// 	}/*
-// }

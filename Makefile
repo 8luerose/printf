@@ -6,7 +6,9 @@ ARFLAGS = cr
 RM = rm -f
 NAME = libftprintf.a
 
-SRCS =  ft_printf.c 	\
+SRCS =  ft_printf.c 			\
+		ft_print_c_s_i_d_u.c	\
+		ft_print_ptr.c
 
 OBJS = $(SRCS:.c=.o)
 

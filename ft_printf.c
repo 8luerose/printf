@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:17:29 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/07 20:36:46 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:58:29 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	ft_check_argv(char c, va_list ap, int *bytes)
 	else if (c == 'u')
 		ft_putnbr_unsigned(va_arg(ap, unsigned int), bytes);
 	else if (c == 'x')
-		ft_atoi_base(va_arg(ap, unsigned int), "0123456789abcdef", bytes);
+		ft_convert_base(va_arg(ap, unsigned int), "0123456789abcdef", bytes);
 	else if (c == 'X')
-		ft_atoi_base(va_arg(ap, unsigned int), "0123456789ABCDEF", bytes);
+		ft_convert_base(va_arg(ap, unsigned int), "0123456789ABCDEF", bytes);
 	else if (c == '%')
 		ft_putchar('%', bytes);
 	else
