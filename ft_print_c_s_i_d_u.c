@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_c_s_i_d_u.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taehkwon <taehkwon@student.42.kr>          +#+  +:+       +#+        */
+/*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:58:17 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/07 05:30:26 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:39:50 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ void	ft_putstr(char *str, int *bytes)
 	}
 	else
 	{
-		/*i = 0;
-		while (str[i])
-			i++;
-		*bytes += write(1, str, i);*/
 		i = 0;
 		while (str[i])
 			ft_putchar(str[i++], bytes);
@@ -71,16 +67,16 @@ void	ft_putnbr_unsigned(unsigned int n, int *bytes)
 	if (n >= 10)
 	{
 		ft_putnbr_unsigned((n / 10), bytes);
-		ft_putnbr_unsigned((n % 10), bytes);
+		//ft_putnbr_unsigned((n % 10), bytes);
 	}
 	else
 	{
-		c = n + '0';
+		c = n % 10 + '0';
 		ft_putchar(c, bytes);
 	}
 }
 
-void	ft_atoi_base(unsigned int n, char *base, int *bytes)
+void	ft_convert_base(unsigned int n, char *base, int *bytes)
 {
 	int				i;
 	int				len;
