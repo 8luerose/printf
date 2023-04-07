@@ -6,11 +6,11 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:58:17 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/07 22:48:04 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:21:49 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_print.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c, int *bytes)
 {
@@ -23,7 +23,7 @@ void	ft_putchar(char c, int *bytes)
 		return ;
 	}
 	else
-		*bytes ++;
+		(*bytes)++;
 }
 
 void	ft_putstr(char *str, int *bytes)
@@ -54,7 +54,7 @@ void	ft_putnbr(int n, int *bytes)
 		ft_putchar('-', bytes);
 		nb = -nb;
 	}
-	else if (nb >= 10)
+	if (nb >= 10)
 		ft_putnbr(nb / 10, bytes);
 	c = nb % 10 + '0';
 	ft_putchar(c, bytes);
@@ -76,6 +76,6 @@ void	ft_convert_base(unsigned int num, char *hex, int *bytes)
 
 	if (num >= 16)
 		ft_convert_base(num / 16, hex, bytes);
-	c = hex[ptr % 16] + '0';
+	c = hex[num % 16] + '0';
 	ft_putchar(c, bytes);
 }
