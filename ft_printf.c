@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:17:29 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/07 23:11:09 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:13:03 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_check_argv(char c, va_list ap, int *bytes)
 	else if (c == 's')
 		ft_putstr((char *)va_arg(ap, char *), bytes);
 	else if (c == 'p')
-		ft_putptr(va_arg(ap, unsigned long long), bytes);
+		ft_putptr(va_arg(ap, void *), bytes);
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(ap, int), bytes);
 	else if (c == 'u')
@@ -31,7 +31,7 @@ static void	ft_check_argv(char c, va_list ap, int *bytes)
 	else if (c == '%')
 		ft_putchar('%', bytes);
 	else
-		*bytes = -1;
+		ft_putchar(c, bytes);
 }
 
 int	ft_printf(const char *format, ...)
@@ -48,7 +48,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 			ft_check_argv(format[++i], ap, &bytes);
 		else
-			bytes += write(1, &format[i], 1);
+			ft_putchar(format[i], &bytes);
 		if (bytes == -1)
 		{
 			va_end(ap);
