@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:58:17 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/08 21:10:24 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:15:53 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,23 +99,3 @@ void	ft_convert_base(unsigned int num, char *hex, int *bytes)
 	if (*bytes == -1)
 		return ;
 }
-// c = hex[num % 16] + '0';
-
-/*
-
-void	ft_put_recul(unsigned long long ptr, char *hex, int *bytes)
-{
-	char	c;
-
-	if (ptr == 0)
-		ft_putstr("0x", bytes);
-	else
-	{
-		ft_put_recul(ptr / 16, "0123456789abcdef", bytes);
-		c = hex[ptr % 16] + '0';
-		ft_putchar(c, bytes);
-	}
-}
-// ft_putchar(hex[ptr % 16], bytes);
-
-*/

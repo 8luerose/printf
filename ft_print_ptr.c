@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:52:41 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/08 21:10:55 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:15:47 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ void	ft_put_recul(unsigned long long ptr, char *hex, int *bytes)
 			return ;
 	}
 }
-// ft_putchar(hex[ptr % 16], bytes);
