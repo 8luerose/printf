@@ -6,7 +6,7 @@
 /*   By: taehkwon <taehkwon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:58:17 by taehkwon          #+#    #+#             */
-/*   Updated: 2023/04/08 21:15:53 by taehkwon         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:54:12 by taehkwon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,6 @@ void	ft_convert_base(unsigned int num, char *hex, int *bytes)
 {
 	char	c;
 
-	if (*bytes == -1)
-		return ;
 	if (num >= 16)
 		ft_convert_base(num / 16, hex, bytes);
 	if (*bytes == -1)
