@@ -17,7 +17,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
-%.o : %.c
+%.o : %.c ft_printf.h
 	$(CC) $(CFLAG) -c $< -o $@
 
 clean :
@@ -26,6 +26,7 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+re : fclean
+	$(MAKE) all
 
 .PHONY : all clean fclean re
